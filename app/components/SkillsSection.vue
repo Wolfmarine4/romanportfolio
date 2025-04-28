@@ -23,7 +23,7 @@
               Technology & Development
             </h3>
             <p class="text-gray-700 dark:text-gray-300 mb-6">
-              Creating digital solutions through code and design. Building applications that solve problems and enhance experiences.
+              Building digital solutions through code and design to solve problems and improve experiences. 
             </p>
             <div class="flex flex-wrap gap-2">
               <SkillTag label="Web Design" />
@@ -43,7 +43,7 @@
               Scientific Research
             </h3>
             <p class="text-gray-700 dark:text-gray-300 mb-6">
-              Exploring scientific principles through experiments and analysis. Developing innovative approaches to complex problems.
+              Exploring scientific principles through experiments and analysis to find effective solutions to real-world problems.
             </p>
             <div class="flex flex-wrap gap-2">
               <SkillTag label="Physics" />
@@ -63,7 +63,7 @@
               Creative Expression
             </h3>
             <p class="text-gray-700 dark:text-gray-300 mb-6">
-              Producing music, photography, and digital art that communicate ideas and emotions in compelling ways.
+              Creating music, photography, and digital art tnat communicates ideas and emotions.
             </p>
             <div class="flex flex-wrap gap-2">
               <SkillTag label="Music Production" />

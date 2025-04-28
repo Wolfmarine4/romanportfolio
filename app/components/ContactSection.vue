@@ -40,7 +40,7 @@
                 </div>
                 <div>
                   <p class="font-medium mb-1">Location</p>
-                  <span>Euless, Texas</span>
+                  <span>Dallas, Texas</span>
                 </div>
               </div>
 
@@ -64,10 +64,7 @@
                 <a href="https://instagram.com/romanross" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   <Icon name="simple-icons:instagram" class="text-slate-700 dark:text-slate-300 w-6 h-6" />
                 </a>
-                <a href="https://spotify.com/" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                  <Icon name="simple-icons:spotify" class="text-slate-700 dark:text-slate-300 w-6 h-6" />
-                </a>
-                <a href="https://github.com/romanross" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <a href="https://github.com/WolfMarine4" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   <Icon name="simple-icons:github" class="text-slate-700 dark:text-slate-300 w-6 h-6" />
                 </a>
               </div>

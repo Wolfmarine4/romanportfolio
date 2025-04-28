@@ -102,7 +102,7 @@ const projectItems = [
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Roman Ross © {{ new Date().getFullYear() }} | Euless, TX
+          Roman Ross © {{ new Date().getFullYear() }} | Dallas, TX
         </p>
       </template>
       <template #right>

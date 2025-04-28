@@ -8,7 +8,7 @@
         </h1>
         <div class="w-20 h-1 bg-slate-700 dark:bg-slate-400 mb-6 mx-auto md:mx-0"></div>
         <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-lg">
-          Student. Creator. Innovator. Exploring the intersection of technology, science, and arts.
+          Bringing together technology, science, and creativity to develop new ideas and solutions. 
         </p>
 
         <div class="flex flex-wrap gap-4 justify-center md:justify-start">
