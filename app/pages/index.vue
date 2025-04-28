@@ -1,64 +1,54 @@
+<script setup>
+import HeroSection from '~/components/HeroSection.vue'
+import AboutMe from '~/components/AboutMe.vue'
+import ResumeSection from '~/components/ResumeSection.vue'
+import ContactSection from '~/components/ContactSection.vue'
+import SkillsSection from '~/components/SkillsSection.vue'
+
+useHead({
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+  ],
+  link: [
+    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Bitter:wght@500;700&display=swap' }
+  ],
+  htmlAttrs: {
+    lang: 'en'
+  }
+})
+
+const title = "Roman Ross | Portfolio"
+const description = "Student. Creator. Innovator."
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: '/social-card.png',
+  twitterImage: '/social-card.png',
+  twitterCard: 'summary_large_image'
+})
+</script>
+
 <template>
-  <div>
-    <UPageHero
-      title="Nuxt UI Pro - Starter"
-      description="Nuxt UI Pro is a collection of premium components built on top of Nuxt UI to create beautiful & responsive applications in minutes."
-      :links="[{
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/getting-started/installation/pro/nuxt',
-        target: '_blank',
-        trailingIcon: 'i-lucide-arrow-right',
-        size: 'xl'
-      }, {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-pro/starter',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }]"
-    />
-
-    <UPageSection
-      id="features"
-      title="The freedom to build anything"
-      description="Nuxt UI Pro ships with an extensive set of advanced components that cover a wide range of use-cases. Carefully crafted to reduce boilerplate code without sacrificing flexibility."
-      :features="[{
-        icon: 'i-lucide-wrench',
-        title: 'Fully customizable',
-        description: 'Customize any component through the App Config or fine-tune specific instances with the ui prop, just like Nuxt UI.'
-      }, {
-        icon: 'i-lucide-square-stack',
-        title: 'Powerful slot system',
-        description: 'Take full control of component layouts and content with Vue\'s comprehensive slot system for maximum flexibility.'
-      }, {
-        icon: 'i-lucide-smartphone',
-        title: 'Mobile-first & responsive',
-        description: 'Built with a mobile-first approach, all components automatically adapt to any screen size while maintaining a polished look.'
-      }]"
-    />
-
-    <UPageSection>
-      <UPageCTA
-        title="Start with Nuxt UI Pro today!"
-        description="Nuxt UI Pro is free in development, but you need a license to use it in production."
-        variant="subtle"
-        :links="[{
-          label: 'Buy now',
-          to: 'https://ui.nuxt.com/pro/purchase',
-          target: '_blank',
-          icon: 'i-lucide-shopping-cart',
-          color: 'neutral'
-        }, {
-          label: 'License',
-          to: 'https://ui.nuxt.com/getting-started/license',
-          target: '_blank',
-          trailingIcon: 'i-lucide-circle-help',
-          color: 'neutral',
-          variant: 'subtle'
-        }]"
-      />
-    </UPageSection>
-  </div>
+  <UApp class="sophisticated-portfolio">
+    <!-- Main Content Sections -->
+    <HeroSection />
+    <AboutMe />
+    <SkillsSection />
+    <ResumeSection />
+    <ContactSection />
+  </UApp>
 </template>
+
+<style scoped>
+.sophisticated-portfolio {
+  font-family: 'Poppins', sans-serif;
+}
+.sophisticated-portfolio h1,
+.sophisticated-portfolio h2,
+.sophisticated-portfolio h3 {
+  font-family: 'Bitter', serif;
+}
+</style>

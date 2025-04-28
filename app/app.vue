@@ -11,67 +11,128 @@ useHead({
   }
 })
 
-const title = 'Nuxt UI Pro - Starter'
-const description = 'Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.'
-
+const title = "Roman Ross - High School Portfolio"
+const description = "Welcome to Roman Ross's high school portfolio showcasing projects, achievements, and skills developed throughout my academic journey."
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: 'https://ui-pro-starter.nuxt.dev/social-card.png',
-  twitterImage: 'https://ui-pro-starter.nuxt.dev/social-card.png',
+  ogImage: '/social-card.png',
+  twitterImage: '/social-card.png',
   twitterCard: 'summary_large_image'
 })
+
+// Project showcase items
+const projectItems = [
+  { label: 'Science Fair', to: '#science-fair', icon: 'i-lucide-flask' },
+  { label: 'Art Gallery', to: '#art-gallery', icon: 'i-lucide-paintbrush' },
+  { label: 'Coding Projects', to: '#coding', icon: 'i-lucide-code' },
+  { label: 'Volunteer Work', to: '#volunteer', icon: 'i-lucide-heart-handshake' },
+  { label: 'Sports Achievements', to: '#sports', icon: 'i-lucide-trophy' }
+]
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader :ui="{ wrapper: 'justify-between' }">
       <template #left>
-        <NuxtLink to="/">
-          <LogoPro class="w-auto h-6 shrink-0" />
-        </NuxtLink>
-
-        <TemplateMenu />
-      </template>
-
-      <template #right>
         <UColorModeButton />
-
-        <UButton
-          to="https://github.com/nuxt-ui-pro/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
+        <!-- Social Media Icons -->
+        <div class="flex items-center space-x-2">
+          <UButton
+            to="https://github.com/romanross"
+            target="_blank"
+            icon="i-simple-icons-github"
+            aria-label="GitHub"
+            color="neutral"
+            variant="ghost"
+          />
+          <UButton
+            to="https://instagram.com/romanross"
+            target="_blank"
+            icon="i-simple-icons-instagram"
+            aria-label="Instagram"
+            color="neutral"
+            variant="ghost"
+          />
+          <UButton
+            to="https://linkedin.com/in/romanross"
+            target="_blank"
+            icon="i-simple-icons-linkedin"
+            aria-label="LinkedIn"
+            color="neutral"
+            variant="ghost"
+          />
+        </div>
+      </template>
+      
+      <!-- Navigation Links - Both Desktop and Mobile -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#" class="hover:text-gray-300">Home</a>
+        <a href="#about" class="hover:text-gray-300">About Me</a>
+        <a href="#resume" class="hover:text-gray-300">Academic Resume</a>
+        <a href="#contact" class="hover:text-gray-300">Contact</a>
+      </div>
+      
+      <template #right>
+        <!-- Mobile Menu Configuration -->
+        <UNavigationLinks
+          class="md:hidden"
+          :links="[
+            { label: 'Home', to: '#' },
+            { label: 'About Me', to: '#about' },
+            { label: 'Academic Resume', to: '#resume' },
+            { label: 'Contact', to: '#contact' },
+            { 
+              label: 'Project Showcase', 
+              children: projectItems 
+            }
+          ]"
         />
       </template>
     </UHeader>
-
+    
     <UMain>
       <NuxtPage />
     </UMain>
-
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
+    
+    <USeparator />
+    
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Copyright © {{ new Date().getFullYear() }}
+          Roman Ross © {{ new Date().getFullYear() }} | Euless, TX
         </p>
       </template>
-
       <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-pro/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
+        <!-- Social Media Icons in Footer -->
+        <div class="flex items-center space-x-2">
+          <UButton
+            to="https://github.com/romanross"
+            target="_blank"
+            icon="i-simple-icons-github"
+            aria-label="GitHub"
+            color="neutral"
+            variant="ghost"
+          />
+          <UButton
+            to="https://instagram.com/romanross"
+            target="_blank"
+            icon="i-simple-icons-instagram"
+            aria-label="Instagram"
+            color="neutral"
+            variant="ghost"
+          />
+          <UButton
+            to="https://linkedin.com/in/romanross"
+            target="_blank"
+            icon="i-simple-icons-linkedin"
+            aria-label="LinkedIn"
+            color="neutral"
+            variant="ghost"
+          />
+        </div>
       </template>
     </UFooter>
   </UApp>
