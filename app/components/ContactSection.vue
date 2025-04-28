@@ -72,7 +72,7 @@
           </div>
 
           <!-- Contact Form Area -->
-          <div class="md:col-span-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded shadow-sm">
+          <!-- <div class="md:col-span-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded shadow-sm">
             <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
               Send a Message
             </h3>
@@ -97,8 +97,8 @@
                 color="gray"
                 class="border-slate-600 dark:border-slate-400 text-slate-800 dark:text-slate-200 font-medium"
               />
-            </div>
-          </div>
+            </div> 
+          </div> -->
         </div>
       </div>
     </div>

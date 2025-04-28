@@ -26,84 +26,82 @@
               </p>
             </section>
   
-            <!-- Education Section - FIXED with bulleted points -->
+            <!-- Education Section - FIXED with custom formatting -->
             <section>
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
                 Education
               </h3>
-              <div class="relative pl-8 border-l border-gray-200 dark:border-gray-700 space-y-8">
+              <div class="relative pl-8 border-l border-gray-200 dark:border-gray-700 space-y-12">
                 <div class="relative">
-                  <div class="absolute -left-2 top-1 w-4 h-4 rounded-full bg-slate-700 dark:bg-slate-500"></div>
                   <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
                     iSchool Virtual Academy
                   </h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-1">Expected Graduation: 2027</p>
-                  <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 mt-2">
-                    <li>Weighted GPA: 4.1</li>
-                    <li>Accelerated Mathematics Program</li>
-                    <li>Computer Science Pathway</li>
-                  </ul>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">Expected Graduation: 2027</p>
+                  <div class="pl-5 mt-3">
+                    <div class="text-gray-700 dark:text-gray-300 mb-1">• Weighted GPA: 4.1</div>
+                    <div class="text-gray-700 dark:text-gray-300 mb-1">• Accelerated Mathematics Program</div>
+                    <div class="text-gray-700 dark:text-gray-300">• Computer Science Pathway</div>
+                  </div>
                 </div>
   
                 <div class="relative">
-                  <div class="absolute -left-2 top-1 w-4 h-4 rounded-full bg-slate-700 dark:bg-slate-500"></div>
                   <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
                     Lone Star College
                   </h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-1">2023 – 2024</p>
-                  <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 mt-2">
-                    <li>Dual coursework: Web Design and Art Appreciation</li>
-                    <li>4.0 GPA</li>
-                    <li>Completed college-level coursework while in high school</li>
-                  </ul>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">2023 – 2024</p>
+                  <div class="pl-5 mt-3">
+                    <div class="text-gray-700 dark:text-gray-300 mb-1">• Dual coursework: Web Design and Art Appreciation</div>
+                    <div class="text-gray-700 dark:text-gray-300 mb-1">• 4.0 GPA</div>
+                    <div class="text-gray-700 dark:text-gray-300">• Completed college-level coursework while in high school</div>
+                  </div>
                 </div>
               </div>
             </section>
   
-            <!-- Extracurricular Activities Section -->
+            <!-- Extracurricular Activities Section - Without bullets -->
             <section>
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
                 Extracurricular Activities
               </h3>
-              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                <li>Self-directed learning in data visualization and database tools</li>
-                <li>Brazilian Jiu Jitsu</li>
-                <li>Tae Kwon Do</li>
-              </ul>
+              <div class="pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <div>• Self-directed learning in data visualization and database tools</div>
+                <div>• Brazilian Jiu Jitsu</div>
+                <div>• Tae Kwon Do</div>
+              </div>
             </section>
   
-            <!-- Volunteer Experience Section -->
+            <!-- Volunteer Experience Section - Without bullets -->
             <section>
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
                 Volunteer Work
               </h3>
-              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                <li>Academy 4 Volunteer (2019) - Assisted with packing food for homeless shelters</li>
-              </ul>
+              <div class="pl-5 text-gray-700 dark:text-gray-300">
+                <div>• Academy 4 Volunteer (2019) - Assisted with packing food for homeless shelters</div>
+              </div>
             </section>
   
-            <!-- Achievements Section -->
+            <!-- Achievements Section - Without bullets -->
             <section>
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
                 Achievements
               </h3>
-              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                <li>A Honor Roll Student - 6 consecutive years</li>
-                <li>TSI2 Completion Certificate</li>
-                <li>Udemy Adobe Mastery Certificate</li>
-              </ul>
+              <div class="pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <div>• A Honor Roll Student - 6 consecutive years</div>
+                <div>• TSI2 Completion Certificate</div>
+                <div>• Udemy Adobe Mastery Certificate</div>
+              </div>
             </section>
   
-            <!-- Skills Section -->
+            <!-- Skills Section - Without bullets -->
             <section>
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
                 Skills
               </h3>
-              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                <li>Coding (Nuxt.js, Vue 3, HTML, CSS)</li>
-                <li>Data Science & Analytics (collecting, organizing, and analyzing data)</li>
-                <li>Database Organization (Notion.so)</li>
-              </ul>
+              <div class="pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <div>• Coding (Nuxt.js, Vue 3, HTML, CSS)</div>
+                <div>• Data Science & Analytics (collecting, organizing, and analyzing data)</div>
+                <div>• Database Organization (Notion.so)</div>
+              </div>
             </section>
   
             <!-- References Section -->
@@ -124,7 +122,7 @@
             </section>
   
             <!-- Download Resume Button -->
-            <div class="text-center">
+            <!-- <div class="text-center">
               <UButton
                 label="Download Full Resume (PDF)"
                 icon="i-lucide-download"
@@ -132,7 +130,7 @@
                 color="gray"
                 class="bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-medium"
               />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
