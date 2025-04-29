@@ -29,7 +29,7 @@
                 <div>
                   <p class="font-medium mb-1">Email</p>
                   <a href="mailto:roman.ross@example.com" class="hover:text-slate-800 dark:hover:text-slate-200">
-                    roman.ross@example.com
+                    romanjross@gmail.com
                   </a>
                 </div>
               </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                   <p class="font-medium mb-1">Education</p>
-                  <span>Class of 2025</span>
+                  <span>Class of 2027</span>
                 </div>
               </div>
             </div>
@@ -61,9 +61,9 @@
                 Follow Me
               </p>
               <div class="flex space-x-4">
-                <a href="https://instagram.com/romanross" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <!-- <a href="https://instagram.com/romanross" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   <Icon name="simple-icons:instagram" class="text-slate-700 dark:text-slate-300 w-6 h-6" />
-                </a>
+                </a> -->
                 <a href="https://github.com/WolfMarine4" target="_blank" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 flex items-center justify-center rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   <Icon name="simple-icons:github" class="text-slate-700 dark:text-slate-300 w-6 h-6" />
                 </a>
