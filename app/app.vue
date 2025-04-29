@@ -41,14 +41,14 @@ const projectItems = [
         <!-- Social Media Icons -->
         <div class="flex items-center space-x-2">
           <UButton
-            to="https://github.com/romanross"
+            to="https://github.com/WolfMarine4"
             target="_blank"
             icon="i-simple-icons-github"
             aria-label="GitHub"
             color="neutral"
             variant="ghost"
           />
-          <UButton
+          <!-- <UButton
             to="https://instagram.com/romanross"
             target="_blank"
             icon="i-simple-icons-instagram"
@@ -63,7 +63,7 @@ const projectItems = [
             aria-label="LinkedIn"
             color="neutral"
             variant="ghost"
-          />
+          /> -->
         </div>
       </template>
       
@@ -111,14 +111,14 @@ const projectItems = [
         <!-- Social Media Icons in Footer -->
         <div class="flex items-center space-x-2">
           <UButton
-            to="https://github.com/romanross"
+            to="https://github.com/WolfMarine4"
             target="_blank"
             icon="i-simple-icons-github"
             aria-label="GitHub"
             color="neutral"
             variant="ghost"
           />
-          <UButton
+          <!-- <UButton
             to="https://instagram.com/romanross"
             target="_blank"
             icon="i-simple-icons-instagram"
@@ -133,7 +133,7 @@ const projectItems = [
             aria-label="LinkedIn"
             color="neutral"
             variant="ghost"
-          />
+          /> -->
         </div>
       </template>
     </UFooter>
