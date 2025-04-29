@@ -3,7 +3,7 @@ import { ref, onMounted, nextTick } from 'vue'
 
 const projects = [
   { title: 'CSS Code Visualizer', description: 'Visualizes code structure using animation.', type: 'code' },
-  { title: 'Blue Dodrio', description: 'A stylized, digital creature concept.', type: 'art' },
+  { title: 'Purple Star', description: 'A stylized, digital moving star concept.', type: 'art' },
   { title: 'Water Analysis', description: 'Simulates particles in fluid.', type: 'science' },
   { title: 'Signal Pulse', description: 'Sound-reactive visual pulse.', type: 'music' },
   { title: 'Urban Flash', description: 'Mimics shutter blink or flash.', type: 'photo' }
