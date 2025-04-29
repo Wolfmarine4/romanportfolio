@@ -71,6 +71,7 @@ const projectItems = [
       <div class="hidden md:flex items-center space-x-6">
         <a href="#" class="hover:text-gray-300">Home</a>
         <a href="#about" class="hover:text-gray-300">About Me</a>
+        <a href="#projects" class="hover:text-gray-300">Projects</a>
         <a href="#resume" class="hover:text-gray-300">Academic Resume</a>
         <a href="#contact" class="hover:text-gray-300">Contact</a>
       </div>
@@ -82,6 +83,7 @@ const projectItems = [
           :links="[
             { label: 'Home', to: '#' },
             { label: 'About Me', to: '#about' },
+            { label: 'Projects', to: '#projects' },
             { label: 'Academic Resume', to: '#resume' },
             { label: 'Contact', to: '#contact' },
             { 

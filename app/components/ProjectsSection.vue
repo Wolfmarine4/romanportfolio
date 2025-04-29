@@ -1,103 +1,172 @@
 <script setup>
-const projectItems = [
-  { label: 'Science', to: '#science', icon: 'i-lucide-flask-conical' },
-  { label: 'Art', to: '#art', icon: 'i-lucide-palette' },
-  { label: 'Code', to: '#coding', icon: 'i-lucide-code-2' },
-  { label: 'Music', to: '#music', icon: 'i-lucide-music' },
-  { label: 'Photography', to: '#photography', icon: 'i-lucide-camera' }
+import { ref, onMounted, nextTick } from 'vue'
+
+const projects = [
+  { title: 'CSS Code Visualizer', description: 'Visualizes code structure using animation.', type: 'code' },
+  { title: 'Blue Dodrio', description: 'A stylized, digital creature concept.', type: 'art' },
+  { title: 'Water Analysis', description: 'Simulates particles in fluid.', type: 'science' },
+  { title: 'Signal Pulse', description: 'Sound-reactive visual pulse.', type: 'music' },
+  { title: 'Urban Flash', description: 'Mimics shutter blink or flash.', type: 'photo' }
 ]
+
+function setupCanvas(canvas, type) {
+  if (!canvas) return
+  nextTick(() => {
+    const ctx = canvas.getContext('2d')
+    const w = canvas.width = canvas.offsetWidth
+    const h = canvas.height = canvas.offsetHeight
+
+    if (type === 'code') {
+      let text = '> npm run build\n> Compiling...\n> Done.'
+      let index = 0
+      function drawTyping() {
+        ctx.fillStyle = 'black'
+        ctx.fillRect(0, 0, w, h)
+        ctx.fillStyle = '#0f0'
+        ctx.font = '14px monospace'
+        ctx.fillText(text.slice(0, index), 10, 30)
+        index = index < text.length ? index + 1 : text.length
+        requestAnimationFrame(drawTyping)
+      }
+      drawTyping()
+    }
+
+    if (type === 'art') {
+      let t = 0
+      function drawCreature() {
+        t += 0.01
+        ctx.clearRect(0, 0, w, h)
+        ctx.beginPath()
+        ctx.moveTo(w / 2, h / 2)
+        for (let i = 0; i < 360; i++) {
+          const angle = i * (Math.PI / 180)
+          const radius = 30 + 10 * Math.sin(t * 3 + angle * 5)
+          const x = w / 2 + radius * Math.cos(angle)
+          const y = h / 2 + radius * Math.sin(angle)
+          ctx.lineTo(x, y)
+        }
+        ctx.closePath()
+        ctx.strokeStyle = '#9f7aea'
+        ctx.stroke()
+        requestAnimationFrame(drawCreature)
+      }
+      drawCreature()
+    }
+
+    if (type === 'science') {
+      const orbs = Array.from({ length: 10 }, (_, i) => ({
+        angle: Math.random() * Math.PI * 2,
+        radius: 30 + i * 5,
+        speed: 0.01 + i * 0.002
+      }))
+      function drawOrbits() {
+        ctx.fillStyle = 'black'
+        ctx.fillRect(0, 0, w, h)
+        ctx.translate(w / 2, h / 2)
+        for (const orb of orbs) {
+          orb.angle += orb.speed
+          const x = orb.radius * Math.cos(orb.angle)
+          const y = orb.radius * Math.sin(orb.angle)
+          ctx.beginPath()
+          ctx.arc(x, y, 2, 0, Math.PI * 2)
+          ctx.fillStyle = '#3b82f6'
+          ctx.fill()
+        }
+        ctx.setTransform(1, 0, 0, 1, 0, 0)
+        requestAnimationFrame(drawOrbits)
+      }
+      drawOrbits()
+    }
+
+    if (type === 'music') {
+      let t = 0
+      function drawWave() {
+        t += 0.05
+        ctx.clearRect(0, 0, w, h)
+        ctx.beginPath()
+        for (let x = 0; x < w; x++) {
+          const y = h / 2 + Math.sin(x * 0.05 + t) * 20
+          ctx.lineTo(x, y)
+        }
+        ctx.strokeStyle = '#f43f5e'
+        ctx.lineWidth = 2
+        ctx.stroke()
+        requestAnimationFrame(drawWave)
+      }
+      drawWave()
+    }
+
+    if (type === 'photo') {
+      let alpha = 1
+      let fading = true
+      function shutterEffect() {
+        ctx.clearRect(0, 0, w, h)
+        ctx.fillStyle = `rgba(255,255,255,${alpha})`
+        ctx.fillRect(0, 0, w, h)
+        if (fading) {
+          alpha -= 0.1
+          if (alpha <= 0) {
+            alpha = 0
+            fading = false
+            setTimeout(() => {
+              alpha = 1
+              fading = true
+            }, 2000 + Math.random() * 3000)
+          }
+        }
+        requestAnimationFrame(shutterEffect)
+      }
+      shutterEffect()
+    }
+  })
+}
 </script>
 
 <template>
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-      
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <span class="inline-block text-sm font-medium uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">
+  <USection id="projects" padding="py-16" bg-white dark:bg-gray-900>
+    <UContainer size="xl">
+      <div class="text-center mb-12">
+        <USpan class="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
           Portfolio
-        </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          My Projects
-        </h2>
-        <div class="w-16 h-1 bg-slate-700 dark:bg-slate-500 mx-auto"></div>
+        </USpan>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">My Projects</h2>
+        <div class="w-16 h-1 bg-gray-700 dark:bg-gray-500 mx-auto"></div>
       </div>
 
-      <!-- Project Navigation -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <UButton
-          v-for="item in projectItems"
-          :key="item.label"
-          :to="item.to"
-          :icon="item.icon"
-          :label="item.label"
-          variant="soft"
-          color="gray"
-          size="lg"
-          class="font-medium"
-        />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div
+          v-for="(project, i) in projects"
+          :key="i"
+          class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-gray-900 hover:scale-[1.02] transition-transform duration-300 h-full"
+        >
+          <div class="relative h-48 border-4 border-white dark:border-gray-800 rounded-sm overflow-hidden">
+            <canvas
+              :ref="el => setupCanvas(el, project.type)"
+              class="w-full h-full block"
+            ></canvas>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{{ project.title }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{{ project.description }}</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Project Sections -->
-      <div class="space-y-24">
-
-        <!-- Science Projects -->
-        <section id="science" class="scroll-mt-24">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
-            Science Projects
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard title="Water Quality Analysis" description="Conducted research on local water sources using chemical analysis techniques." />
-            <ProjectCard title="Renewable Energy Experiment" description="Designed and built a small-scale solar energy collection system." />
-          </div>
-        </section>
-
-        <!-- Art Projects -->
-        <section id="art" class="scroll-mt-24">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
-            Art Projects
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard title="Digital Landscapes" description="A series of digital paintings exploring futuristic landscapes and environments." />
-            <ProjectCard title="Mixed Media Experiments" description="Combining traditional art techniques with digital tools for unique visual expressions." />
-          </div>
-        </section>
-
-        <!-- Coding Projects -->
-        <section id="coding" class="scroll-mt-24">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
-            Coding Projects
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard title="Student Task Manager" description="A web application built to help students organize assignments and track progress." />
-            <ProjectCard title="Python Game Development" description="Created a simple educational game using Python and Pygame libraries." />
-          </div>
-        </section>
-
-        <!-- Music Projects -->
-        <section id="music" class="scroll-mt-24">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
-            Music Projects
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard title="Electronic Compositions" description="A collection of original electronic music pieces created with digital production tools." buttonLabel="Listen" />
-            <ProjectCard title="School Jazz Ensemble" description="Performances and recordings with the school's award-winning jazz ensemble." buttonLabel="Listen" />
-          </div>
-        </section>
-
-        <!-- Photography Projects -->
-        <section id="photography" class="scroll-mt-24">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-slate-700 dark:border-slate-500 pl-4">
-            Photography Projects
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard title="Urban Nature Series" description="A photography series exploring natural elements within urban environments." buttonLabel="View Gallery" />
-            <ProjectCard title="Student Portraits" description="A portrait series highlighting diverse students and their unique stories." buttonLabel="View Gallery" />
-          </div>
-        </section>
-
-      </div>
-    </div>
-  </section>
+    </UContainer>
+  </USection>
 </template>
+
+<style scoped>
+.section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  border-left: 4px solid #374151;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+.dark .section-title {
+  color: #ffffff;
+  border-color: #9ca3af;
+}
+</style>
